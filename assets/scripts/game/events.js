@@ -80,5 +80,6 @@ const addNewGameHandler = () => {
 
 module.exports = {
   addHandlers,
-  addNewGameHandler
+  addNewGameHandler,
+  startNewGame
 }
