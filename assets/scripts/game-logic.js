@@ -1,5 +1,9 @@
 'use strict'
 
+const checkElementNull = function (element) {
+  return element !== ''
+}
+
 const winCheck = function (array) {
   const boardArray = array
 
@@ -80,6 +84,9 @@ const winCheck = function (array) {
     } else if (winner === 'o') {
       $('#status-text').text('Player O wins!')
     }
+  } else if (array.every(checkElementNull) === true) {
+    console.log("cat's game!")
+    $('#status-text').text("Cat's game!")
   }
   return 'keep playing'
 }
