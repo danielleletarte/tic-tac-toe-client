@@ -26,9 +26,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .button-holder {
   margin-top: 15px;
   text-align: center;
+  clear: both;
 }
 
-.btn-primary {
+.btn {
   background: none;
   border: 1px solid black;
   color: black;
@@ -82,4 +83,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 #change-password .modal-footer {
   margin-top: 10px;
+}
+
+#status-board {
+  width: 40%;
+  height: 20px;
+  text-align: center;
 }

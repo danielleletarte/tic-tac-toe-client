@@ -11,6 +11,7 @@ const startNewGame = function (event) {
   ui.resetBoard()
   removeHandlers()
   addHandlers()
+  $('#status-text').text('Player X, your move!')
 }
 
 const populateSquare = function () {
@@ -32,6 +33,7 @@ const populateSquare = function () {
     api.updateBoard(data)
       .then(ui.newMoveSuccess)
       .catch(ui.newMoveFailure)
+    $('#status-text').text('Player O, your move!')
   } else {
     this.innerHTML = 'o'
     const value = 'o'
@@ -46,7 +48,8 @@ const populateSquare = function () {
     }
     api.updateBoard(data)
     .then(ui.newMoveSuccess)
-    .catch(gameStore.game.cells)
+    .catch(ui.newMoveFailure)
+    $('#status-text').text('Player X, your move!')
   }
 }
 
