@@ -13,10 +13,38 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   text-align: center;
 }
 
+.app-wrapper {
+  width: 100%;
+  padding: 0;
+}
+
+.game-board {
+  clear: both;
+  width: 50%;
+  min-width: 280px;
+  margin: 10px auto;
+}
+
+.player-stats {
+  height: 100px;
+  width: 48%;
+  float: left;
+  display: inline-block;
+  margin: 1%;
+}
+
+#player-x-stats {
+  background-color: lightgray;
+}
+
+#player-y-stats {
+  background-color: gray;
+}
+
+
 .game-title {
   text-align: center;
   padding: 0;
-  margin-bottom: 10px;
 }
 
 #change-password-button {
@@ -33,13 +61,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   background: none;
   border: 1px solid black;
   color: black;
-}
-
-.game-board {
-  width: 40%;
-  clear: both;
-  min-height: 50;
-  min-width: 280px;
 }
 
 .col-xs-4 {
@@ -86,7 +107,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 #status-board {
-  width: 40%;
+  width: 95%;
   height: 20px;
   text-align: center;
+  padding: 0px;
 }
