@@ -15,51 +15,26 @@
 
 <body class="container-fluid">
 
-  <!-- Sign Up Modal -->
-  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#signUpModal">
-  Sign Up
-  </button>
-  <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal fade" id="welcome-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="signUpLabel">Sign Up</h4>
+          <h4 class="modal-title">Let's Play Tic-Tac-Toe!</h4>
         </div>
         <div class="modal-body">
-          <form id="sign-up">
-            <input name="credentials[email]" id="sign-up-email" type="text" value="" placeholder="Email">
-            <input name="credentials[password]" id="sign-up-password" type="password" value="" placeholder="Password">
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-              <input type="submit" name="submit" value="Sign Up" class="btn btn-primary">
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Sign In Modal -->
-  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#signInModal">
-  Sign In
-  </button>
-  <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="signInLabel">Sign In</h4>
-        </div>
-        <div class="modal-body">
-          <form id="sign-in">
-            <input name="credentials[email]" id="sign-in-email" type="text" value="" placeholder="Email">
-            <input name="credentials[password]" id="sign-in-password" type="password" value="" placeholder="Password">
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-              <input type="submit" name="submit" value="Sign In" class="btn btn-primary">
-            </div>
-          </form>
+          <div class="modal-body">
+            <form id="sign-in">
+              <input name="credentials[email]" id="sign-in-email" type="text" value="" placeholder="Email">
+              <input name="credentials[password]" id="sign-in-password" type="password" value="" placeholder="Password">
+              <button type="submit" name="submit" value="Sign In" class="btn btn-primary" id="signInModal">Sign In</button>
+            </form>
+            <form id="sign-up">
+              <input name="credentials[email]" id="sign-up-email" type="text" value="" placeholder="Email">
+              <input name="credentials[password]" id="sign-up-password" type="password" value="" placeholder="Password">
+              <button type="submit" name="submit" value="Sign Up" class="btn btn-primary" id="signUpModal">Sign Up</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>

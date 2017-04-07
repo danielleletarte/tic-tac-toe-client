@@ -1,6 +1,10 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+#sign-up {
+  margin-top: 10px;
+}
+
 .game-board {
   width: 40%;
   clear: both;

@@ -10,4 +10,5 @@ $(() => {
   setAPIOrigin(location, config)
   gameEvents.addNewGameHandler()
   authEvents.addAuthHandlers()
+  $('#welcome-modal').modal('show')
 })

@@ -13,7 +13,7 @@ const onSignUp = function (event) {
 }
 
 const onSignUpConfirm = function (event) {
-  $('#signUpModal').modal('hide')
+  $('#welcome-modal').modal('hide')
 }
 
 const onSignIn = function (event) {
@@ -26,7 +26,7 @@ const onSignIn = function (event) {
 }
 
 const onSignInConfirm = function (event) {
-  $('#signInModal').modal('hide')
+  $('#welcome-modal').modal('hide')
 }
 
 const onSignOut = function (event) {
@@ -54,8 +54,8 @@ const addAuthHandlers = () => {
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('click', onSignOut)
   $('#change-password').on('submit', onPasswordReset)
-  $('#signUpModal').on('submit', onSignUpConfirm)
-  $('#signInModal').on('submit', onSignInConfirm)
+  $('#signUpModal').on('click', onSignUpConfirm)
+  $('#signInModal').on('click', onSignInConfirm)
   $('#changePasswordModal').on('submit', passwordResetConfirm)
 }
 
