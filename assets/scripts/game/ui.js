@@ -2,6 +2,7 @@
 
 const gameStore = require('../game-store.js')
 const win = require('../game-logic.js')
+const api = require('./api.js')
 
 const resetBoard = function () {
   $('#0').empty().css('background-color', 'transparent')
@@ -33,7 +34,14 @@ const newMoveSuccess = (data) => {
   console.log('gameStore game cells', gameStore.game.cells)
   win.winCheck(gameStore.game.cells)
   console.log('array to check win against ', gameStore.game.cells)
-  console.log(win.winCheck(gameStore.game.cells))
+  if (win.winCheck !== 'keep playing') {
+    const data = {
+      'game': {
+        'over': 'true'
+      }
+    }
+    api.sendWinner(data)
+  }
 }
 
 const newMoveFailure = (error) => {
