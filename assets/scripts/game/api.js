@@ -14,6 +14,16 @@ const newGame = () => {
   })
 }
 
+const grabStats = () => {
+  return $.ajax({
+    url: config.apiOrigin + '/games/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const updateBoard = (data) => {
   return $.ajax({
     url: config.apiOrigin + '/games/' + gameStore.game.id,
@@ -39,5 +49,6 @@ const sendWinner = (data) => {
 module.exports = {
   updateBoard,
   newGame,
-  sendWinner
+  sendWinner,
+  grabStats
 }

@@ -2,6 +2,7 @@
 
 const gameStore = require('../game-store.js')
 const win = require('../game-logic.js')
+const gameLog = require('../game-log.js')
 const api = require('./api.js')
 
 const resetBoard = function () {
@@ -24,6 +25,18 @@ const newGameSuccess = (data) => {
 }
 
 const newGameFailure = (error) => {
+  console.error(error)
+}
+
+const displayStatsSuccess = (data) => {
+  console.log('get games request looks like: ', data)
+  gameLog.games = data.games
+  console.log('gameLog games looks like: ', gameLog.games)
+  const totalGames = gameLog.games.length
+  $('#player-x-stats').text('Games Played : ' + totalGames)
+}
+
+const displayStatsFailure = (error) => {
   console.error(error)
 }
 
@@ -53,5 +66,7 @@ module.exports = {
   newGameFailure,
   newMoveSuccess,
   newMoveFailure,
-  resetBoard
+  resetBoard,
+  displayStatsSuccess,
+  displayStatsFailure
 }

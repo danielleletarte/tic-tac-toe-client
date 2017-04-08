@@ -1,8 +1,9 @@
 'use strict'
 
-const ui = require('./ui')
-const api = require('./api')
+const ui = require('./ui.js')
+const api = require('./api.js')
 const gameStore = require('../game-store.js')
+const gameLog = require('../game-log.js')
 
 const startNewGame = function (event) {
   api.newGame()
@@ -11,6 +12,10 @@ const startNewGame = function (event) {
   ui.resetBoard()
   removeHandlers()
   addHandlers()
+  api.grabStats()
+    .then(ui.displayStatsSuccess)
+    .catch(ui.displayStatsFailure)
+  console.log('Are we getting any data?', gameLog.games)
   $('#status-text').text('Player X, your move!')
 }
 
