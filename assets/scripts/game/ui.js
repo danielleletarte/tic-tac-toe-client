@@ -3,7 +3,6 @@
 const gameStore = require('../game-store.js')
 const win = require('../game-logic.js')
 const api = require('./api.js')
-const events = require('./events.js')
 
 const resetBoard = function () {
   $('#0').empty().css('background-color', 'transparent')
@@ -45,14 +44,34 @@ const newMoveSuccess = (data) => {
       }
     }
     api.sendWinner(data)
+    lockBoard()
   } else if (win.winCheck(gameStore.game.cells) === 'none') {
     $('#status-text').text("Cat's game!")
+    $('#new-game-button').css('background-color', '#F0B39E')
+    const data = {
+      'game': {
+        'over': 'true'
+      }
+    }
+    api.sendWinner(data)
+    lockBoard()
   }
-  events.removeHandlers()
 }
 
 const newMoveFailure = (error) => {
   console.error(error)
+}
+
+const lockBoard = () => {
+  $('#0').off('click')
+  $('#1').off('click')
+  $('#2').off('click')
+  $('#3').off('click')
+  $('#4').off('click')
+  $('#5').off('click')
+  $('#6').off('click')
+  $('#7').off('click')
+  $('#8').off('click')
 }
 
 module.exports = {
