@@ -28,13 +28,11 @@ const newGameFailure = (error) => {
   console.error(error)
 }
 
-const displayStatsSuccess = (data) => {
-  console.log('get games request looks like: ', data)
-  gameLog.games = data.games
-  console.log('gameLog games looks like: ', gameLog.games)
-  const totalGames = gameLog.games.length
-  $('#player-x-stats').text('Games Played : ' + totalGames)
-}
+// const displayStatsSuccess = (data) => {
+//   console.log('get games request looks like: ', data)
+//   gameLog.games = data.games
+//   console.log('gameLog games looks like: ', gameLog.games)
+// }
 
 const displayStatsFailure = (error) => {
   console.error(error)
@@ -45,15 +43,20 @@ const newMoveSuccess = (data) => {
   console.log(data)
   gameStore.game.cells = data.game.cells
   console.log('gameStore game cells', gameStore.game.cells)
-  win.winCheck(gameStore.game.cells)
+  // win.winCheck(gameStore.game.cells)// maybe move this down in if block -->
   console.log('array to check win against ', gameStore.game.cells)
-  if (win.winCheck !== 'keep playing') {
+  if (win.winCheck(gameStore.game.cells) === 'x' || win.winCheck(gameStore.game.cells) === 'o') {
+    const winner = win.winCheck(gameStore.game.cells)
+    console.log('winner is ', winner)
+    $('#status-text').text('Player ' + winner + ' wins!')
     const data = {
       'game': {
         'over': 'true'
       }
     }
     api.sendWinner(data)
+  } else if (win.winCheck(gameStore.game.cells) === 'none') {
+    $('#status-text').text("Cat's game!")
   }
 }
 
@@ -67,6 +70,6 @@ module.exports = {
   newMoveSuccess,
   newMoveFailure,
   resetBoard,
-  displayStatsSuccess,
+  // displayStatsSuccess,
   displayStatsFailure
 }

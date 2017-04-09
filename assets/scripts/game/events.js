@@ -4,6 +4,7 @@ const ui = require('./ui.js')
 const api = require('./api.js')
 const gameStore = require('../game-store.js')
 const gameLog = require('../game-log.js')
+const stats = require('./stats.js')
 
 const startNewGame = function (event) {
   api.newGame()
@@ -13,9 +14,13 @@ const startNewGame = function (event) {
   removeHandlers()
   addHandlers()
   api.grabStats()
-    .then(ui.displayStatsSuccess)
+  .then((response) => {
+    stats.logGames(response)
+    stats.numberGames(gameLog.games)
+    stats.numberWins(gameLog.games)
+    stats.displayStats()
+  })
     .catch(ui.displayStatsFailure)
-  console.log('Are we getting any data?', gameLog.games)
   $('#status-text').text('Player X, your move!')
 }
 

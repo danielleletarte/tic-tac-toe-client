@@ -4,6 +4,8 @@ const checkElementNull = function (element) {
   return element !== ''
 }
 
+let winner = ''
+
 const winCheck = function (array) {
   const boardArray = array
 
@@ -21,74 +23,79 @@ const winCheck = function (array) {
 // Check if current status of boarArray produces a winner
 
   if (winCombo1.toString() === 'x,x,x' || winCombo1.toString() === 'o,o,o') {
-    const winner = winCombo1[0]
-    console.log('player ' + winner + ' , you win!')
+    winner = winCombo1[0]
+    // console.log('player ' + winner + ', you win!')
     if (winner === 'x') {
-      $('#status-text').text('Player X wins!')
+    //  //('#status-text').text('Player X wins!')
     } else if (winner === 'o') {
-      $('#status-text').text('Player O wins!')
+      // //('#status-text').text('Player O wins!')
     }
   } else if (winCombo2.toString() === 'x,x,x' || winCombo2.toString() === 'o,o,o') {
-    const winner = winCombo2[0]
-    console.log('player ' + winner + ' , you win!')
+    winner = winCombo2[0]
+    // console.log('player ' + winner + ', you win!')
     if (winner === 'x') {
-      $('#status-text').text('Player X wins!')
+      // //('#status-text').text('Player X wins!')
     } else if (winner === 'o') {
-      $('#status-text').text('Player O wins!')
+      // //('#status-text').text('Player O wins!')
     }
   } else if (winCombo3.toString() === 'x,x,x' || winCombo3.toString() === 'o,o,o') {
-    const winner = winCombo3[0]
-    console.log('player ' + winner + ' , you win!')
+    winner = winCombo3[0]
+    // console.log('player ' + winner + ', you win!')
     if (winner === 'x') {
-      $('#status-text').text('Player X wins!')
+      // //('#status-text').text('Player X wins!')
     } else if (winner === 'o') {
-      $('#status-text').text('Player O wins!')
+      // //('#status-text').text('Player O wins!')
     }
   } else if (winCombo4.toString() === 'x,x,x' || winCombo4.toString() === 'o,o,o') {
-    const winner = winCombo4[0]
-    console.log('player ' + winner + ' , you win!')
+    winner = winCombo4[0]
+    // console.log('player ' + winner + ', you win!')
     if (winner === 'x') {
-      $('#status-text').text('Player X wins!')
+      //('#status-text').text('Player X wins!')
     } else if (winner === 'o') {
-      $('#status-text').text('Player O wins!')
+      //('#status-text').text('Player O wins!')
     }
   } else if (winCombo5.toString() === 'x,x,x' || winCombo5.toString() === 'o,o,o') {
-    const winner = winCombo5[0]
-    console.log('player ' + winner + ' , you win!')
+    winner = winCombo5[0]
+    // console.log('player ' + winner + ', you win!')
     if (winner === 'x') {
-      $('#status-text').text('Player X wins!')
+      //('#status-text').text('Player X wins!')
     } else if (winner === 'o') {
-      $('#status-text').text('Player O wins!')
+      //('#status-text').text('Player O wins!')
     }
   } else if (winCombo6.toString() === 'x,x,x' || winCombo6.toString() === 'o,o,o') {
-    const winner = winCombo6[0]
-    console.log('player ' + winner + ' , you win!')
+    winner = winCombo6[0]
+    // console.log('player ' + winner + ', you win!')
     if (winner === 'x') {
-      $('#status-text').text('Player X wins!')
+      //('#status-text').text('Player X wins!')
     } else if (winner === 'o') {
-      $('#status-text').text('Player O wins!')
+      //('#status-text').text('Player O wins!')
     }
   } else if (winCombo7.toString() === 'x,x,x' || winCombo7.toString() === 'o,o,o') {
-    const winner = winCombo7[0]
-    console.log('player ' + winner + ' , you win!')
+    winner = winCombo7[0]
+    // console.log('player ' + winner + ', you win!')
     if (winner === 'x') {
-      $('#status-text').text('Player X wins!')
+      //('#status-text').text('Player X wins!')
     } else if (winner === 'o') {
-      $('#status-text').text('Player O wins!')
+      //('#status-text').text('Player O wins!')
     }
   } else if (winCombo8.toString() === 'x,x,x' || winCombo8.toString() === 'o,o,o') {
-    const winner = winCombo8[0]
-    console.log('player ' + winner + ' , you win!')
+    winner = winCombo8[0]
+    // console.log('player ' + winner + ', you win!')
     if (winner === 'x') {
-      $('#status-text').text('Player X wins!')
+      //('#status-text').text('Player X wins!')
     } else if (winner === 'o') {
-      $('#status-text').text('Player O wins!')
+      //('#status-text').text('Player O wins!')
     }
   } else if (array.every(checkElementNull) === true) {
-    console.log("cat's game!")
-    $('#status-text').text("Cat's game!")
+    winner = 'none'
+    // console.log("cat's game!")
+    //('#status-text').text("Cat's game!")
+  // } else console.log('keep playing')
   }
-  return 'keep playing'
+  else {
+    winner = ''
+  }
+  return winner
 }
 
 module.exports = {
