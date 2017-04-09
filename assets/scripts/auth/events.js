@@ -12,10 +12,6 @@ const onSignUp = function (event) {
     .catch(ui.signUpFailure)
 }
 
-const onSignUpConfirm = function (event) {
-  $('#welcome-modal').modal('hide')
-}
-
 const onSignIn = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
@@ -49,7 +45,6 @@ const addAuthHandlers = () => {
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('click', onSignOut)
   $('#change-password').on('submit', onPasswordReset)
-  $('#signUpModal').on('click', onSignUpConfirm)
   $('#changePasswordModal').on('submit', passwordResetConfirm)
 }
 

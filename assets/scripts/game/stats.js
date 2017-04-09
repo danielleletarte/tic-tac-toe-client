@@ -9,8 +9,8 @@ const logGames = function (data) {
 
 const numberGames = function (data) {
   const numberGames = data.length
-  console.log('number of games played ', data.length)
-  $('#games-played').text('Games Played : ' + data.length)
+  console.log('number of games played ', numberGames)
+  $('#games-played').text('Games Played : ' + numberGames)
   return numberGames
 }
 const numberWins = function (data) {
