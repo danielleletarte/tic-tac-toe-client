@@ -21,6 +21,7 @@ const startNewGame = function (event) {
   })
     .catch(ui.displayStatsFailure)
   $('#status-text').text('Player x, your move!')
+  $('#new-game-button').css('background-color', 'transparent')
 }
 
 const populateSquare = function () {
@@ -93,5 +94,6 @@ const addNewGameHandler = () => {
 module.exports = {
   addHandlers,
   addNewGameHandler,
-  startNewGame
+  startNewGame,
+  removeHandlers
 }

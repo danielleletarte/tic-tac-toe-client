@@ -24,10 +24,6 @@ const onSignIn = function (event) {
     .catch(ui.signInFailure)
 }
 
-const onSignInConfirm = function (event) {
-  $('#welcome-modal').modal('hide')
-}
-
 const onSignOut = function (event) {
   event.preventDefault()
   api.signOut()
@@ -54,7 +50,6 @@ const addAuthHandlers = () => {
   $('#sign-out').on('click', onSignOut)
   $('#change-password').on('submit', onPasswordReset)
   $('#signUpModal').on('click', onSignUpConfirm)
-  // $('#signInModal').on('click', onSignInConfirm)
   $('#changePasswordModal').on('submit', passwordResetConfirm)
 }
 

@@ -3,6 +3,7 @@
 const gameStore = require('../game-store.js')
 const win = require('../game-logic.js')
 const api = require('./api.js')
+const events = require('./events.js')
 
 const resetBoard = function () {
   $('#0').empty().css('background-color', 'transparent')
@@ -27,26 +28,16 @@ const newGameFailure = (error) => {
   console.error(error)
 }
 
-// const displayStatsSuccess = (data) => {
-//   console.log('get games request looks like: ', data)
-//   gameLog.games = data.games
-//   console.log('gameLog games looks like: ', gameLog.games)
-// }
-
 const displayStatsFailure = (error) => {
   console.error(error)
 }
 
 const newMoveSuccess = (data) => {
   gameStore.game.clickCount++
-  console.log(data)
   gameStore.game.cells = data.game.cells
-  console.log('gameStore game cells', gameStore.game.cells)
-  // win.winCheck(gameStore.game.cells)// maybe move this down in if block -->
-  console.log('array to check win against ', gameStore.game.cells)
   if (win.winCheck(gameStore.game.cells) === 'x' || win.winCheck(gameStore.game.cells) === 'o') {
+    $('#new-game-button').css('background-color', '#F0B39E')
     const winner = win.winCheck(gameStore.game.cells)
-    console.log('winner is ', winner)
     $('#status-text').text('Player ' + winner + ' wins!')
     const data = {
       'game': {
@@ -57,6 +48,7 @@ const newMoveSuccess = (data) => {
   } else if (win.winCheck(gameStore.game.cells) === 'none') {
     $('#status-text').text("Cat's game!")
   }
+  events.removeHandlers()
 }
 
 const newMoveFailure = (error) => {
@@ -69,6 +61,5 @@ module.exports = {
   newMoveSuccess,
   newMoveFailure,
   resetBoard,
-  // displayStatsSuccess,
   displayStatsFailure
 }
