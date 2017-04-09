@@ -15,10 +15,12 @@ const signInSuccess = (data) => {
   console.log('signIn success ran. data is:', data)
   store.user = data.user
   newGame.startNewGame()
+  $('#welcome-modal').modal('hide')
 }
 
 const signInFailure = (error) => {
-  console.log('signIn failure ran. error is:', error)
+  console.log('signIn failure ran. error status:', error.status)
+  $('#welcome-modal-body').append('<p> Invalid username/password </p>')
 }
 
 const signOutSuccess = () => {

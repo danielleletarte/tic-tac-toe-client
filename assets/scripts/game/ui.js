@@ -2,7 +2,6 @@
 
 const gameStore = require('../game-store.js')
 const win = require('../game-logic.js')
-const gameLog = require('../game-log.js')
 const api = require('./api.js')
 
 const resetBoard = function () {

@@ -18,10 +18,9 @@ const startNewGame = function (event) {
     stats.logGames(response)
     stats.numberGames(gameLog.games)
     stats.numberWins(gameLog.games)
-    stats.displayStats()
   })
     .catch(ui.displayStatsFailure)
-  $('#status-text').text('Player X, your move!')
+  $('#status-text').text('Player x, your move!')
 }
 
 const populateSquare = function () {
@@ -43,7 +42,7 @@ const populateSquare = function () {
     api.updateBoard(data)
       .then(ui.newMoveSuccess)
       .catch(ui.newMoveFailure)
-    $('#status-text').text('Player O, your move!')
+    $('#status-text').text('Player o, your move!')
   } else {
     this.innerHTML = 'o'
     const value = 'o'
@@ -59,7 +58,7 @@ const populateSquare = function () {
     api.updateBoard(data)
     .then(ui.newMoveSuccess)
     .catch(ui.newMoveFailure)
-    $('#status-text').text('Player X, your move!')
+    $('#status-text').text('Player x, your move!')
   }
 }
 

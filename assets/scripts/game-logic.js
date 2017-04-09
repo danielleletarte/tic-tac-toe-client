@@ -24,75 +24,47 @@ const winCheck = function (array) {
 
   if (winCombo1.toString() === 'x,x,x' || winCombo1.toString() === 'o,o,o') {
     winner = winCombo1[0]
-    // console.log('player ' + winner + ', you win!')
     if (winner === 'x') {
-    //  //('#status-text').text('Player X wins!')
     } else if (winner === 'o') {
-      // //('#status-text').text('Player O wins!')
     }
   } else if (winCombo2.toString() === 'x,x,x' || winCombo2.toString() === 'o,o,o') {
     winner = winCombo2[0]
-    // console.log('player ' + winner + ', you win!')
     if (winner === 'x') {
-      // //('#status-text').text('Player X wins!')
     } else if (winner === 'o') {
-      // //('#status-text').text('Player O wins!')
     }
   } else if (winCombo3.toString() === 'x,x,x' || winCombo3.toString() === 'o,o,o') {
     winner = winCombo3[0]
-    // console.log('player ' + winner + ', you win!')
     if (winner === 'x') {
-      // //('#status-text').text('Player X wins!')
     } else if (winner === 'o') {
-      // //('#status-text').text('Player O wins!')
     }
   } else if (winCombo4.toString() === 'x,x,x' || winCombo4.toString() === 'o,o,o') {
     winner = winCombo4[0]
-    // console.log('player ' + winner + ', you win!')
     if (winner === 'x') {
-      //('#status-text').text('Player X wins!')
     } else if (winner === 'o') {
-      //('#status-text').text('Player O wins!')
     }
   } else if (winCombo5.toString() === 'x,x,x' || winCombo5.toString() === 'o,o,o') {
     winner = winCombo5[0]
-    // console.log('player ' + winner + ', you win!')
     if (winner === 'x') {
-      //('#status-text').text('Player X wins!')
     } else if (winner === 'o') {
-      //('#status-text').text('Player O wins!')
     }
   } else if (winCombo6.toString() === 'x,x,x' || winCombo6.toString() === 'o,o,o') {
     winner = winCombo6[0]
-    // console.log('player ' + winner + ', you win!')
     if (winner === 'x') {
-      //('#status-text').text('Player X wins!')
     } else if (winner === 'o') {
-      //('#status-text').text('Player O wins!')
     }
   } else if (winCombo7.toString() === 'x,x,x' || winCombo7.toString() === 'o,o,o') {
     winner = winCombo7[0]
-    // console.log('player ' + winner + ', you win!')
     if (winner === 'x') {
-      //('#status-text').text('Player X wins!')
     } else if (winner === 'o') {
-      //('#status-text').text('Player O wins!')
     }
   } else if (winCombo8.toString() === 'x,x,x' || winCombo8.toString() === 'o,o,o') {
     winner = winCombo8[0]
-    // console.log('player ' + winner + ', you win!')
     if (winner === 'x') {
-      //('#status-text').text('Player X wins!')
     } else if (winner === 'o') {
-      //('#status-text').text('Player O wins!')
     }
   } else if (array.every(checkElementNull) === true) {
     winner = 'none'
-    // console.log("cat's game!")
-    //('#status-text').text("Cat's game!")
-  // } else console.log('keep playing')
-  }
-  else {
+  } else {
     winner = ''
   }
   return winner

@@ -22,7 +22,6 @@ const onSignIn = function (event) {
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
-  console.log('sign in ran!')
 }
 
 const onSignInConfirm = function (event) {
@@ -55,7 +54,7 @@ const addAuthHandlers = () => {
   $('#sign-out').on('click', onSignOut)
   $('#change-password').on('submit', onPasswordReset)
   $('#signUpModal').on('click', onSignUpConfirm)
-  $('#signInModal').on('click', onSignInConfirm)
+  // $('#signInModal').on('click', onSignInConfirm)
   $('#changePasswordModal').on('submit', passwordResetConfirm)
 }
 
