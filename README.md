@@ -7,7 +7,7 @@ Game API: [Game Project API](https://github.com/danielleletarte/game-project-api
 
 ## About the App
 Tic-Tac-Toe is a web-based application that lets two people compete against one another.<br>
-HTML, CSS and JavaScript and JQuery were used to build all front-end functionality. Bootstrap was leveraged to implement a mobile-first design that looks great on all devices. The provided [Game Project API](https://github.com/danielleletarte/game-project-api/blob/master/README.md) was used to store user and game state data. Data was passed to/from the backend via AJAX requests.<br>
+HTML, CSS, JavaScript and JQuery were used to build all front-end functionality. Bootstrap was leveraged to implement a mobile-first design that looks great on all devices. The provided [Game Project API](https://github.com/danielleletarte/game-project-api/blob/master/README.md) was used to store user and game state data. Data was passed to/from the backend via AJAX requests.<br>
 One player must have an account and sign in to have access to the game.<br>
 
 ![Screenshot Game Board](imgs/sign-in.png)
@@ -36,9 +36,9 @@ The game board displays who has the next move and indicates when there is a winn
 - After getting the stats to display accurately for Player X, I focused on getting error handing in place wherever it was necessary. I introduced front end messaging to alert users when a password is invalid, a username is taken etc. I also needed to update some of the front end behavior to accomodate error handling. For instance, the welcome modal should not close if a user inputs the wrong username/password. The error message should be displayed with the modal still accessible so the user can try inputting their credentials again.
 
 ### Wireframes and Models
-  [Screen Mockups](imgs/wireframes.jpg)<br>
-  [Game Logic](imgs/game-logic.jpg)<br>
-  [Data Flow](imgs/data-flow.jpg)
+  [Screen Mockups](imgs/wireframes.JPG)<br>
+  [Game Logic](imgs/game-logic.jpeg)<br>
+  [Data Flow](imgs/data-flow.jpeg)
 
 ### User Stories
 
