@@ -4,24 +4,23 @@ const win = require('../game-logic.js')
 
 const logGames = function (data) {
   gameLog.games = data.games
-  gameLog.games.winCount = 0
 }
 
 const numberGames = function (data) {
-  const numberGames = data.length
-  console.log('number of games played ', numberGames)
+  const numberGames = gameLog.games.length - 1
   $('#games-played').text('Games Played : ' + numberGames)
   return numberGames
 }
 const numberWins = function (data) {
+  let winCount = 0
   const gameList = gameLog.games.map(function (e) { return e.cells })
-  for (let i = 0; i < gameList.length; i++) {
+  for (let i = 0; i < gameLog.games.length; i++) {
     gameList[i] = win.winCheck(gameList[i])
     if (gameList[i] === 'x') {
-      gameLog.games.winCount++
+      winCount++
     }
   }
-  $('#games-won').text('Games Won : ' + gameLog.games.winCount)
+  $('#games-won').text('Games Won : ' + winCount)
 }
 
 module.exports = {

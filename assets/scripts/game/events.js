@@ -3,9 +3,8 @@
 const ui = require('./ui.js')
 const api = require('./api.js')
 const gameStore = require('../game-store.js')
-const gameLog = require('../game-log.js')
-const stats = require('./stats.js')
 
+// Process kicked off wheb "New Game" button is clicked.
 const startNewGame = function (event) {
   api.newGame()
     .then(ui.newGameSuccess)
@@ -13,19 +12,12 @@ const startNewGame = function (event) {
   ui.resetBoard()
   removeHandlers()
   addHandlers()
-  api.grabStats()
-  .then((response) => {
-    stats.logGames(response)
-    stats.numberGames(gameLog.games)
-    stats.numberWins(gameLog.games)
-  })
-    .catch(ui.displayStatsFailure)
   $('#status-text').text('Player x, your move!')
   $('#new-game-button').css('background-color', 'transparent')
 }
 
+// Triggered when user selects a square on the board.
 const populateSquare = function () {
-  console.log('what is click count', gameStore.game.clickCount)
   $(this).css('background-color', '#94E5D6')
   const index = parseInt($(this).attr('id'))
   if (gameStore.game.clickCount % 2 === 1) {

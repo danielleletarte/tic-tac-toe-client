@@ -25,7 +25,6 @@ const onSignOut = function (event) {
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
-  console.log('sign out ran!')
 }
 
 const onPasswordReset = function (event) {

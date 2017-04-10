@@ -3,6 +3,7 @@
 const gameStore = require('../game-store.js')
 const win = require('../game-logic.js')
 const api = require('./api.js')
+const stats = require('./stats.js')
 
 const resetBoard = function () {
   $('#0').empty().css('background-color', 'transparent')
@@ -17,10 +18,15 @@ const resetBoard = function () {
 }
 
 const newGameSuccess = (data) => {
-  console.log(data)
   gameStore.game = data.game
   gameStore.game.clickCount = 1
-  console.log('gameStore game ', gameStore.game)
+  api.grabStats()
+  .then((response) => {
+    stats.logGames(response)
+    stats.numberGames(response)
+    stats.numberWins(response)
+  })
+    .catch(displayStatsFailure)
 }
 
 const newGameFailure = (error) => {

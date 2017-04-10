@@ -16,9 +16,7 @@ const signUpFailure = (error) => {
 }
 
 const signInSuccess = (data) => {
-  console.log('signIn success ran. data is:', data)
   store.user = data.user
-  // newGame.startNewGame()
   $('#welcome-modal').modal('hide')
   $('#new-game-button').css('background-color', '#F0B39E')
 }
@@ -31,8 +29,8 @@ const signInFailure = (error) => {
 }
 
 const signOutSuccess = () => {
-  console.log('signOut success ran and nothing was returned')
   store.user = null
+  $('#welcome-modal').modal('show')
 }
 
 const signOutFailure = (error) => {
