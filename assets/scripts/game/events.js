@@ -8,7 +8,6 @@ const gameStore = require('../game-store.js')
 const startNewGame = function (event) {
   api.newGame()
     .then(ui.newGameSuccess)
-    .catch(ui.newGameFailure)
   ui.resetBoard()
   removeHandlers()
   addHandlers()
@@ -34,7 +33,6 @@ const populateSquare = function () {
     }
     api.updateBoard(data)
       .then(ui.newMoveSuccess)
-      .catch(ui.newMoveFailure)
     $('#status-text').text('Player o, your move!')
   } else {
     this.innerHTML = 'o'

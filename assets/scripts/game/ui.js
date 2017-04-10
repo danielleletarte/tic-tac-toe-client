@@ -26,15 +26,6 @@ const newGameSuccess = (data) => {
     stats.numberGames(response)
     stats.numberWins(response)
   })
-    .catch(displayStatsFailure)
-}
-
-const newGameFailure = (error) => {
-  console.error(error)
-}
-
-const displayStatsFailure = (error) => {
-  console.error(error)
 }
 
 const newMoveSuccess = (data) => {
@@ -64,10 +55,6 @@ const newMoveSuccess = (data) => {
   }
 }
 
-const newMoveFailure = (error) => {
-  console.error(error)
-}
-
 const lockBoard = () => {
   $('#0').off('click')
   $('#1').off('click')
@@ -82,9 +69,6 @@ const lockBoard = () => {
 
 module.exports = {
   newGameSuccess,
-  newGameFailure,
   newMoveSuccess,
-  newMoveFailure,
-  resetBoard,
-  displayStatsFailure
+  resetBoard
 }

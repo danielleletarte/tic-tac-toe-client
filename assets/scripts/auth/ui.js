@@ -4,14 +4,12 @@ const store = require('../store.js')
 // const newGame = require('../game/events.js')
 
 const signUpSuccess = (data) => {
-  console.log(data)
   $('#welcome-modal-body').append('<p> Account created. Sign in to play! </p>')
   $('#sign-up-email').val('')
   $('#sign-up-password').val('')
 }
 
-const signUpFailure = (error) => {
-  console.error(error)
+const signUpFailure = () => {
   $('#welcome-modal-body').append('<p> Account with username already exists. Try again. </p>')
 }
 
@@ -21,8 +19,7 @@ const signInSuccess = (data) => {
   $('#new-game-button').css('background-color', '#F0B39E')
 }
 
-const signInFailure = (error) => {
-  console.log('signIn failure ran. error status:', error.status)
+const signInFailure = () => {
   $('#welcome-modal-body').append('<p> Invalid username/password </p>')
   $('#sign-in-email').val('')
   $('#sign-in-password').val('')
@@ -33,25 +30,10 @@ const signOutSuccess = () => {
   $('#welcome-modal').modal('show')
 }
 
-const signOutFailure = (error) => {
-  console.log('signOut failure ran. error is:', error)
-}
-
-const changePasswordSuccess = (data) => {
-  console.log('passWord change success ran. data is:', data)
-}
-
-const changePasswordFailure = (error) => {
-  console.log('signOut failure ran. error is:', error)
-}
-
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
   signInFailure,
-  signOutSuccess,
-  signOutFailure,
-  changePasswordSuccess,
-  changePasswordFailure
+  signOutSuccess
 }
