@@ -4,13 +4,13 @@ const store = require('../store.js')
 // const newGame = require('../game/events.js')
 
 const signUpSuccess = (data) => {
-  $('#welcome-modal-body').append('<p> Account created. Sign in to play! </p>')
+  $('#error-handler').append('<p> Account created. Sign in to play! </p>')
   $('#sign-up-email').val('')
   $('#sign-up-password').val('')
 }
 
 const signUpFailure = () => {
-  $('#welcome-modal-body').append('<p> Account with username already exists. Try again. </p>')
+  $('#error-handler').append('<p> Account with username already exists. Try again. </p>')
 }
 
 const signInSuccess = (data) => {
@@ -20,7 +20,7 @@ const signInSuccess = (data) => {
 }
 
 const signInFailure = () => {
-  $('#welcome-modal-body').append('<p> Invalid username/password </p>')
+  $('#error-handler').append('<p> Invalid username/password </p>')
   $('#sign-in-email').val('')
   $('#sign-in-password').val('')
 }
@@ -28,6 +28,11 @@ const signInFailure = () => {
 const signOutSuccess = () => {
   store.user = null
   $('#welcome-modal').modal('show')
+  $('#error-handler').html('')
+  $('#sign-in-email').val('')
+  $('#sign-in-password').val('')
+  $('#sign-up-email').val('')
+  $('#sign-up-password').val('')
 }
 
 module.exports = {
