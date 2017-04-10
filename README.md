@@ -55,8 +55,9 @@ The game board displays who has the next move and indicates when there is a winn
 - Create a simple unit test that validate high level functionality to support continuous integration methodology
 
 ### Unsolved Issues
-  -I worked really hard to resolve all issues with completed functionality before the deadline. I believe my logic is solid and, to my knowledge, there are no bugs. I would have liked to focus more on the stretch goals but thought my time was best spent focused on making the code I had as clean as modular as I could.
-  - With more time I would go back and leverage Sass to clean up my styling. This was an area I wasn't able to revisit and refactor.
+- I worked really hard to resolve all issues with completed functionality before the deadline. I believe my logic is solid and, to my knowledge, there are no bugs. I would have liked to focus more on the stretch goals but thought my time was best spent focused on making the code I had as clean as modular as I could.
+
+- With more time I would go back and leverage Sass to clean up my styling. This was an area I wasn't able to revisit and refactor.
 
 ## [License](LICENSE)
 
