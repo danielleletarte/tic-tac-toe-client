@@ -27,13 +27,12 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 .player-stats {
   height: 100px;
-  width: 48%;
-  float: left;
-  display: inline-block;
-  margin: 1%;
+  width: 95%;
+  margin: 1% auto;
 }
 
 #player-x-stats {
+  padding-top: 2px;
   background-color: lightgray;
   text-align: center;
 }
