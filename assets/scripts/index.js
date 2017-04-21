@@ -10,5 +10,8 @@ $(() => {
   setAPIOrigin(location, config)
   gameEvents.addNewGameHandler()
   authEvents.addAuthHandlers()
-  $('#welcome-modal').modal('show')
+  $('#welcome-modal').modal({
+    backdrop: 'static',
+    keyboard: false
+  }).modal('show')
 })
