@@ -1,7 +1,6 @@
 'use strict'
 
 const store = require('../store.js')
-// const newGame = require('../game/events.js')
 
 const signUpSuccess = (data) => {
   $('#error-handler').append('<p> Account created. Sign in to play! </p>')
