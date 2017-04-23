@@ -57,6 +57,7 @@ const onPasswordReset = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   api.changePassword(data)
+    .then(ui.changePasswordSuccess)
 }
 
 const passwordResetConfirm = function (event) {

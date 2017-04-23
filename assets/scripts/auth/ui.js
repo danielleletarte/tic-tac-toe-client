@@ -34,10 +34,17 @@ const signOutSuccess = () => {
   $('#sign-up-password').val('')
 }
 
+const changePasswordSuccess = () => {
+  $('#changePasswordSuccessModal').modal('show')
+  $('#change-password-old').val('')
+  $('#change-password-new').val('')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
   signInFailure,
-  signOutSuccess
+  signOutSuccess,
+  changePasswordSuccess
 }
